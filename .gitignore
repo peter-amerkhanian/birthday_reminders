@@ -1,0 +1,5 @@
+birthday_reminders_venv/
+.mypy_cache/
+.idea/
+__pycache__/
+Facebook_Calendar.ics
