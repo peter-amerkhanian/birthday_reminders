@@ -1,9 +1,7 @@
-from datetime import date, datetime
+from datetime import datetime
 from typing import Iterator, List, NamedTuple
 
 from icalendar import Calendar, Event
-from twilio_api_call import TextMessage
-
 
 class Birthday(NamedTuple):
     name: str
@@ -30,12 +28,3 @@ def get_birthdays() -> Iterator[Birthday]:
                 date: datetime = datetime.strptime(date_str, "%Y%m%d")
                 if name in get_names():
                     yield Birthday(name, date)
-
-
-if __name__ == "__main__":
-    birthday: Birthday
-    for birthday in get_birthdays():
-        today: date = datetime.today().date()
-        if birthday.date.date() == today:
-            messenger = TextMessage(birthday.name, birthday.date)
-            messenger.send_message()
