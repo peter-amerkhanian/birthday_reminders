@@ -12,7 +12,7 @@ class Birthday(NamedTuple):
 def get_names() -> List[str]:
     with open('names.txt', 'r') as f_1:
         names_str: str = f_1.read()
-        names: list = names_str.split(',')
+        names: List[str] = names_str.split(',')
         return names
 
 

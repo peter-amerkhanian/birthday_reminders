@@ -10,7 +10,7 @@ def main() -> None:
     birthday: Birthday
     for birthday in get_birthdays():
         if birthday.date.date() == today:
-            messenger = TextMessage(birthday.name, birthday.date)
+            messenger: TextMessage = TextMessage(birthday.name, birthday.date)
             messenger.send_message()
             message_sent = True
     if not message_sent:
