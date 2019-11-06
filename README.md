@@ -9,7 +9,7 @@ to run `send_texts.py` :
 - `MY_PHONE` - the phone # that will receive the reminders
 - `TWILIO_PHONE` - your twilio phone #
 
-###Also,
+### Also,  
 In the main directory, you must have a `Facebook_Calendar.ics`
 file, which is an icalendar file that I used the excellent
 [Scrap Facebook Birthdays](https://github.com/ani10030/scrap-facebook-birthdays)
