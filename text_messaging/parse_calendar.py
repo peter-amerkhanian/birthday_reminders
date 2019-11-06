@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import Iterator, List, NamedTuple
+import os
 
 from icalendar import Calendar, Event
 
@@ -10,14 +11,23 @@ class Birthday(NamedTuple):
 
 
 def get_names() -> List[str]:
-    with open('names.txt', 'r') as f_1:
+    if os.getcwd().endswith("birthday_reminders"):
+        path = "names.txt"
+    else:
+        path = os.path.join(os.getcwd(), "birthday_reminders", "names.txt")
+    with open(path, 'r') as f_1:
         names_str: str = f_1.read()
         names: List[str] = names_str.split(',')
         return [name.strip().lower() for name in names]
 
 
+
 def get_birthdays() -> Iterator[Birthday]:
-    with open('Facebook_Calendar.ics', encoding="latin1") as f_2:
+    if os.getcwd().endswith("birthday_reminders"):
+        path = "Facebook_Calendar.ics"
+    else:
+        path = os.path.join(os.getcwd(), "birthday_reminders", "Facebook_Calendar.ics")
+    with open(str(path), encoding="latin1") as f_2:
         file: str = f_2.read()
         birthdays: Calendar = Calendar.from_ical(file)
         event: Event
