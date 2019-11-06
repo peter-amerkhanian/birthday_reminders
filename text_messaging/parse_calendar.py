@@ -3,6 +3,7 @@ from typing import Iterator, List, NamedTuple
 
 from icalendar import Calendar, Event
 
+
 class Birthday(NamedTuple):
     name: str
     date: datetime

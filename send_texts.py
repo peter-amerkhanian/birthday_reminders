@@ -1,6 +1,7 @@
-from text_messaging.twilio_api_call import TextMessage
-from text_messaging.parse_calendar import Birthday, get_birthdays
 from datetime import datetime
+
+from text_messaging.parse_calendar import Birthday, get_birthdays
+from text_messaging.twilio_api_call import TextMessage
 
 
 def main() -> None:

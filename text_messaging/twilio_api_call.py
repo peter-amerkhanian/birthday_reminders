@@ -1,8 +1,8 @@
+import os
 import socket
+from datetime import datetime
 
 from twilio.rest import Client
-from datetime import datetime
-import os
 
 socket.getaddrinfo('localhost', 8000)
 
