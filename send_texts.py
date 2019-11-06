@@ -7,8 +7,7 @@ from text_messaging.twilio_api_call import TextMessage
 def main() -> None:
     message_sent: bool = False
     today: str = datetime.today().strftime("%m-%d-%Y")
-    birthday: Birthday
-    for birthday in get_birthdays():
+    for birthday in get_birthdays(): # birthday: Birthday
         if birthday.date.date() == today:
             messenger: TextMessage = TextMessage(birthday.name, birthday.date)
             messenger.send_message()
