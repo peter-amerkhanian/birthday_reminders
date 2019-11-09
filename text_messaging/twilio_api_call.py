@@ -29,9 +29,16 @@ class TextMessage:
         :return: None
         """
         body: str = "{}'s birthday is today ({}).".format(self.name, self.date.strftime("%m-%d-%Y"))
+        # Send to Peter
         message = self.client.messages.create(
             body=body,
             from_=os.environ["TWILIO_PHONE"],
             to=os.environ["MY_PHONE"]
+        )
+        # Send to John
+        self.client.messages.create(
+            body=body,
+            from_=os.environ["TWILIO_PHONE"],
+            to=os.environ["JOHN_PHONE"]
         )
         print(message.sid, " - ", body)
