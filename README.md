@@ -1,13 +1,15 @@
 ## SMS Birthday Reminder
 This app uses Twilio to send the user a text the morning
 of a friend's birthday. This is meant to be used as
-a chron job.
-Note that the following environmental variables must be
-set to run `send_texts.py` :
+a chron job, running `send_texts_chronjob.py` onces daily
+at your desired time.  
+
+The following environmental variables must be
+set to run `send_texts_chronjob.py` :
 - `TW_ACCOUNT` - Your twilio account id
 - `TW_KEY` - The key for your twilio account
 - `MY_PHONE` - the phone # that will receive the reminders
-- `TWILIO_PHONE` - your twilio phone #
+- `TWILIO_PHONE` - your twilio phone  
 
 Please note that for testing purposes, there is an
 additional environmental variable, `JOHN_PHONE`, which can
@@ -22,7 +24,6 @@ portion of code from `twilio_api_call.py`:
 42            to=os.environ["JOHN_PHONE"]
 43        )
 ```
-
 ### Also,  
 In the main directory, you must have a `Facebook_Calendar.ics`
 file, which is an icalendar file that I used the excellent
@@ -31,3 +32,8 @@ command line app for. You also must have a `names.txt` file
 that includes a comma (no space) separated list of the names
 of the specific friends out of all of your facebook friends
 that you want a birthday reminder for.
+
+### COMING SOON:
+- a Flask API that manages a sqlite database to replace `names.txt`
+- a React app that connects to the Flask API, so that one can
+manage the names they want reminders for through a UI.
