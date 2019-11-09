@@ -6,11 +6,17 @@ from icalendar import Calendar, Event
 
 
 class Birthday(NamedTuple):
+    """A named tuple that holds the data for one birthday"""
     name: str
     date: datetime
 
 
 def get_names() -> List[str]:
+    """
+    Retrieve the names that the user will want to receive
+    birthday reminders for.
+    :return: List[str] that contains names
+    """
     if os.getcwd().endswith("birthday_reminders"):
         path = "names.txt"
     else:
@@ -23,6 +29,10 @@ def get_names() -> List[str]:
 
 
 def get_birthdays() -> Iterator[Birthday]:
+    """
+    creates Birthday objects of every person the user wants a reminder for
+    :return: Iterator[Birthday]
+    """
     if os.getcwd().endswith("birthday_reminders"):
         path = "Facebook_Calendar.ics"
     else:
