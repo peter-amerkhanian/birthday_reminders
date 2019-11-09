@@ -1,7 +1,7 @@
 ## SMS Birthday Reminder
 This app uses Twilio to send the user a text the morning
 of a friend's birthday. This is meant to be used as
-a chron job, running `send_texts_chronjob.py` onces daily
+a chron job, running `send_texts_chronjob.py` once daily
 at your desired time.  
 
 The following environmental variables must be
