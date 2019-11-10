@@ -4,8 +4,7 @@ birthday_reminders_venv/
 __pycache__/
 Facebook_Calendar.ics
 
-#TEMPORARY
-/frontend
+
 
 # dependencies
 frontend/node_modules
